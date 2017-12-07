@@ -1,3 +1,34 @@
+//show popup function
+function showPopup() {
+    $('#popupCanvasProp').css('display', 'block');
+}
+
+//hide popup function
+function hidePopup() {
+    $('#popupCanvasProp').css('display', 'none');
+}
+
+//show popup after page was loaded
+$(document).ready(function() {
+    showPopup();
+});
+
+//popup close button
+$('#closePopup').click(function () {
+    hidePopup();
+});
+
+//close popup on apply button
+$('#applyButton').click(function () {
+    hidePopup();
+    $('#canvasHeading').text("Design canvas");
+});
+
+//show popup on greed tool
+$('.greed').click(function () {
+    showPopup();
+});
+
 //create grid function
 function makeGrid() {
     var gridHeight = $('#input_height').val();
@@ -32,6 +63,7 @@ $('#pixel_canvas').click('td', function(event){
     targetCell.css('background-color', color);
 }
 );
+
 
 
 

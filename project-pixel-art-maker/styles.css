@@ -3,11 +3,33 @@ body {
     height: 100%;
     margin: 0;
     padding: 20px 10px;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
 }
 
 .background {
     background-image: url("img/bg.png");
     background-color: #2b4675;
+}
+
+/*.dark-overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+}*/
+
+.wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
@@ -18,6 +40,60 @@ h1 {
     color: #fff;
     text-transform: uppercase;
 
+}
+
+.tools-and-work-field-group {
+    margin-top: 100px;
+}
+
+.tools {
+    float: left;
+    margin-top: 48px;
+   /* border: solid 1px #fff;
+    border-radius: 5px;
+    padding: 15px;*/
+}
+
+.greed {
+    background: url("img/greed.png") no-repeat;
+    background-position: center;
+}
+
+.eraser {
+    background: url("img/eraser.png") no-repeat;
+    background-position: center;
+}
+
+.back {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: solid 3px transparent;
+    box-sizing: border-box;
+}
+
+.back:last-child {
+    margin-bottom: 0;
+}
+
+.back:hover {
+    cursor: pointer;
+    border-color: #f7fa00;
+}
+
+.work-field {
+    float: right;
+    width: calc(100% - 150px);
+ /*   border: solid 1px #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;*/
+}
+
+.canvas-heading {
+    text-transform: uppercase;
 }
 
 h2 {
@@ -48,6 +124,128 @@ td {
     background-color: #fff;
 }
 
-input[type=number] {
+#sizePicker label {
+    color: #2b4675;
+}
+#sizePicker input {
+    margin: 10px 0 25px;
+}
+
+#sizePicker input[type="number"] {
     width: 6em;
+    border: 1px solid rgba(43, 70, 117, 0.4);
+    padding: 0 0 0 8px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+input[type=color] {
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    margin: 6px auto;
+    background-color: transparent;
+}
+
+input[type=color]:hover {
+    cursor: pointer;
+}
+
+input[type=color]:focus {
+    outline: none;
+}
+
+
+#sizePicker input[type="number"]:hover {
+    border-color: #2b4675;
+    color: #2b4675;
+}
+
+#sizePicker input[type="number"]:focus {
+    outline-color: #2b4675;
+}
+
+#sizePicker input[type="submit"] {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    background-color: #2b4675;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+}
+
+#sizePicker input[type="submit"]:hover {
+    background-color: #3e7abd;
+}
+
+
+
+/*popup*/
+#popupCanvasProp {
+    display: none;
+    position: absolute;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 600px;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.50);
+    top: 50%;
+    left: 50%;
+    -webkit-transform : translate(-50%, -50%);
+    -moz-transform    : translate(-50%, -50%);
+    -ms-transform     : translate(-50%, -50%);
+    -o-transform      : translate(-50%, -50%);
+    transform         : translate(-50%, -50%);
+    background-color: #fff;
+}
+
+
+.popupCanvasProp_heaing {
+    text-transform: uppercase;
+    color: #2b4675;
+    margin-bottom: 40px;
+}
+
+#closePopup {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+#closePopup:hover::before {
+    color: #3e7abd;
+}
+
+#closePopup:focus {
+    outline-color: rgba(43, 70, 117, 0.08);
+}
+#closePopup::before {
+    content: "+";
+    display: block;
+    font-size: 4rem;
+    color: #2b4675;
+    line-height: 0;
+    -webkit-transform : rotate(45deg);
+    -moz-transform    : rotate(45deg);
+    -ms-transform     : rotate(45deg);
+    -o-transform      : rotate(45deg);
+    transform         : rotate(45deg);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
