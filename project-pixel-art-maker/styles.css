@@ -54,7 +54,7 @@ h1 {
     padding: 15px;*/
 }
 
-.greed {
+.grid {
     background: url("img/greed.png") no-repeat;
     background-position: center;
 }
@@ -124,22 +124,6 @@ td {
     background-color: #fff;
 }
 
-#sizePicker label {
-    color: #2b4675;
-}
-#sizePicker input {
-    margin: 10px 0 25px;
-}
-
-#sizePicker input[type="number"] {
-    width: 6em;
-    border: 1px solid rgba(43, 70, 117, 0.4);
-    padding: 0 0 0 8px;
-    font-family: 'Orbitron', sans-serif;
-    border-radius: 3px;
-    font-size: 1rem;
-}
-
 input[type=color] {
     width: 80px;
     height: 80px;
@@ -155,32 +139,6 @@ input[type=color]:hover {
 input[type=color]:focus {
     outline: none;
 }
-
-
-#sizePicker input[type="number"]:hover {
-    border-color: #2b4675;
-    color: #2b4675;
-}
-
-#sizePicker input[type="number"]:focus {
-    outline-color: #2b4675;
-}
-
-#sizePicker input[type="submit"] {
-    font-family: 'Orbitron', sans-serif;
-    color: #fff;
-    background-color: #2b4675;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border: none;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.50);
-    border-radius: 3px;
-}
-
-#sizePicker input[type="submit"]:hover {
-    background-color: #3e7abd;
-}
-
 
 
 /*popup*/
@@ -211,6 +169,43 @@ input[type=color]:focus {
     margin-bottom: 40px;
 }
 
+#sizePicker label {
+    color: #2b4675;
+}
+
+#sizePicker input {
+    margin: 10px 0 25px;
+}
+
+#sizePicker input[type="number"] {
+    width: 6em;
+    border: 1px solid rgba(43, 70, 117, 0.4);
+    padding: 0 0 0 8px;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+#sizePicker input[type="number"]:hover {
+    border-color: #2b4675;
+    color: #2b4675;
+}
+
+#sizePicker input[type="number"]:focus {
+    outline-color: #2b4675;
+}
+
+#sizePicker input[type="submit"] {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    background-color: #2b4675;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 3px;
+}
+
 #closePopup {
     width: 60px;
     height: 60px;
@@ -221,7 +216,6 @@ input[type=color]:focus {
     border: none;
     box-sizing: border-box;
 }
-
 
 #closePopup:hover::before {
     color: #3e7abd;
@@ -248,4 +242,13 @@ input[type=color]:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+#sizePicker input[type="submit"]:hover {
+    background-color: #3e7abd;
 }

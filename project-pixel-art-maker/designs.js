@@ -18,14 +18,8 @@ $('#closePopup').click(function () {
     hidePopup();
 });
 
-//close popup on apply button
-$('#applyButton').click(function () {
-    hidePopup();
-    $('#canvasHeading').text("Design canvas");
-});
-
-//show popup on greed tool
-$('.greed').click(function () {
+//listener on greed tool
+$('.grid').click(function () {
     showPopup();
 });
 
@@ -49,9 +43,27 @@ function makeGrid() {
 
 //listener on submit button
 $('input[type="submit"]').click(function(event){
+    var heightField = $('#input_height');
+    var widthField = $('#input_width');
+    var gridHeight = heightField.val();
+    var gridWidth = widthField.val();
+
     event.preventDefault();
-    $('#pixel_canvas').children().remove();
-    makeGrid();
+    heightField.css('border-color', 'rgba(43, 70, 117, 0.4)');
+    widthField.css('border-color', 'rgba(43, 70, 117, 0.4)');
+
+    if (gridHeight > 0 && gridHeight <=100 && gridWidth > 0 && gridWidth <=100) {
+        hidePopup();
+        $('#canvasHeading').text("Design canvas");
+        $('#pixel_canvas').children().remove();
+        makeGrid();
+    }
+    if (gridHeight <= 0 || gridHeight > 100) {
+        $(heightField).css('border-color', 'red');
+    }
+    if(gridWidth <= 0 || gridWidth > 100) {
+        $(widthField).css('border-color', 'red');
+    }
 }
 );
 
