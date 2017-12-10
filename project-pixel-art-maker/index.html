@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Pixel Art Maker!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,700">
     <link rel="stylesheet" href="styles.css">
     <script
@@ -9,54 +10,66 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
+
 </head>
 <body class="background dark-overlay">
-        <div class="popup-overlay"></div>
-        <div class="wrapper">
-            <h1>Pixel Art Maker</h1>
+    <div class="popup-overlay"></div>
+        <div class="table">
+            <main>
+                <div class="wrapper">
+                    <h1>Pixel Art Maker</h1>
 
-            <div class="tools-and-work-field-group clearfix">
-                <div class="tools">
-                    <div class="grid back"></div>
-                    <div class="pencil control back"></div>
-                    <div class="color back">
-                        <input type="color" id="colorPicker" value="#000000">
+                    <div class="tools-and-work-field-group clearfix">
+                        <div class="tools clearfix">
+                            <div class="grid back"></div>
+                            <div class="pencil control back"></div>
+
+                            <div class="eraser control back"></div>
+                            <div class="color back">
+                                <input type="color" id="colorPicker" value="#000000">
+                            </div>
+                        </div>
+
+                        <div class="work-field">
+                            <h2 class="canvas-heading" id="canvasHeading">You need to choose grid size</h2>
+                            <table id="pixel_canvas"></table>
+                        </div>
                     </div>
-                    <div class="eraser control back"></div>
-                </div>
 
-                <div class="work-field">
-                    <h2 class="canvas-heading" id="canvasHeading">You need to choose grid size</h2>
-                    <table id="pixel_canvas"></table>
+                    <div id="popupCanvasProp">
+                        <div class="popup-content">
+                            <h2 class="popupCanvasProp_heaing">Choose Grid Size</h2>
+                            <form id="sizePicker">
+                                <div>
+                                    <label for="input_width">Grid width <br><span class="hint">(min: 1, max: 30)</span></label>
+                                </div>
+                                <div>
+                                    <input type="number" id="input_width" name="width" min="1" max="30" value="" autofocus>
+                                </div>
+                                <div>
+                                    <label for="input_height">Grid height <br><span class="hint">(min: 1, max: 30)</span></label>
+                                </div>
+                                <div>
+                                    <input type="number" id="input_height" name="height" min="1" max="30" value="">
+                                </div>
+                                <div>
+                                    <input type="submit" id="applyButton" value="Apply">
+                                </div>
+                            </form>
+                        </div>
+                        <button name="closePopupButton" id=closePopup></button>
+                    </div>
                 </div>
-            </div>
+            </main>
 
-            <div id="popupCanvasProp">
-                <div class="popup-content">
-                    <h2 class="popupCanvasProp_heaing">Choose Grid Size</h2>
-                    <form id="sizePicker">
-                        <div>
-                            <label for="input_width">Grid width <br><span class="hint">(min: 1, max: 100)</span></label>
-                        </div>
-                        <div>
-                            <input type="number" id="input_width" name="width" min="1" max="100" value="20">
-                        </div>
-                        <div>
-                            <label for="input_height">Grid height <br><span class="hint">(min: 1, max: 100)</span></label>
-                        </div>
-                        <div>
-                            <input type="number" id="input_height" name="height" min="1" max="100" value="20">
-                        </div>
-                        <div>
-                            <input type="submit" id="applyButton" value="Apply">
-                        </div>
-                    </form>
-                </div>
-                <button name="closePopupButton" id=closePopup></button>
-            </div>
-
+            <footer class="page-footer">
+                <ul class="author wrapper">
+                    <li>Designed by Anastasia Savchikhina, 2017</li>
+                    <li>Email: <a href="mailto:anastasia@recolon.ru" class="author_info">anastasia@recolon.ru</a></li>
+                    <li>Skype: <a href="skype:umka_wmc" class="author_info">umka_wmc</a></li>
+                </ul>
+            </footer>
         </div>
-
     <script src="designs.js"></script>
 </body>
 </html>

@@ -1,8 +1,29 @@
-//show popup function
+//reset errors function
+function resetErrors() {
+    var heightField = $('#input_height');
+    var widthField = $('#input_width');
+    var widthHint = $('label[for="input_width"] .hint');
+    var heightHint = $('label[for="input_height"] .hint');
+    widthHint.css('color', 'gray');
+    heightHint.css('color', 'gray');
+    heightField.css('border-color', 'rgba(43, 70, 117, 0.4)');
+    widthField.css('border-color', 'rgba(43, 70, 117, 0.4)');
+}
 
+//init popup function
+function initPopup () {
+    var heightField = $('#input_height');
+    var widthField = $('#input_width');
+    heightField.val(20);
+    widthField.val(20);
+    resetErrors();
+}
+
+//show popup function
 function showPopup() {
     $('#popupCanvasProp').css('display', 'block');
     $('.popup-overlay').css('display', 'block');
+    initPopup ();
 }
 
 //hide popup function
@@ -19,6 +40,7 @@ $(document).ready(function() {
 //popup close button
 $('#closePopup').click(function () {
     hidePopup();
+
 });
 
 //listener on greed tool
@@ -54,18 +76,14 @@ $('#applyButton').click(function(event){
     var isCorrect = true;
 
     event.preventDefault();
-    heightField.css('border-color', 'rgba(43, 70, 117, 0.4)');
-    widthField.css('border-color', 'rgba(43, 70, 117, 0.4)');
-    widthHint.css('color', 'gray');
-    heightHint.css('color', 'gray');
+    resetErrors();
 
-    if (gridHeight <= 0 || gridHeight > 100) {
+    if (gridHeight <= 0 || gridHeight >30) {
         $(heightField).css('border-color', 'red');
-
         heightHint.css('color', 'red');
         isCorrect = false;
     }
-    if(gridWidth <= 0 || gridWidth > 100) {
+    if(gridWidth <= 0 || gridWidth > 30) {
         $(widthField).css('border-color', 'red');
         widthHint.css('color', 'red');
         isCorrect = false;
@@ -81,7 +99,6 @@ $('#applyButton').click(function(event){
     }
 }
 );
-
 
 //painting function
 function painting() {
@@ -102,7 +119,7 @@ function erasing() {
     );
 }
 
-//choose selected control
+//choose control
 $('.control').click(function () {
     $('.control').removeClass('selected');
     $(this).addClass('selected');

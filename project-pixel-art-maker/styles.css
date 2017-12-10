@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     text-align: center;
     height: 100%;
@@ -11,17 +15,10 @@ body {
     background-color: #2b4675;
 }
 
-/*.dark-overlay {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 3;
-}*/
-
 .wrapper {
     max-width: 1500px;
+    min-width: 320px;
+    box-sizing: border-box;
     margin: 0 auto;
     padding: 20px 10px;
 }
@@ -49,9 +46,6 @@ h1 {
 .tools {
     float: left;
     margin-top: 48px;
-   /* border: solid 1px #fff;
-    border-radius: 5px;
-    padding: 15px;*/
 }
 
 .grid {
@@ -91,10 +85,6 @@ h1 {
 .work-field {
     float: right;
     width: calc(100% - 150px);
- /*   border: solid 1px #fff;
-    border-radius: 5px;
-    padding: 15px;
-    box-sizing: border-box;*/
 }
 
 .canvas-heading {
@@ -271,4 +261,133 @@ input[type=color]:focus {
 .selected {
     background-color: aquamarine;
     border-color: #56ab80;
+}
+
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.page-footer {
+    background-color: #000;
+    display: table-row;
+    height: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12rem;
+}
+
+.author {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.author > li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.author > li:last-child {
+    margin-right: 0;
+}
+
+.author > li + li:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 16px;
+    top: 0;
+    left: -13px;
+    background-color: gray;
+}
+
+.author_info {
+    color: #f7fa00;
+    text-decoration: none;
+}
+
+.author_info:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 960px) {
+    .tools {
+        float: none;
+        font-size: 0;
+        margin-bottom: 48px;
+    }
+    .work-field {
+        float: none;
+        margin: auto;
+        width: 95%;
+    }
+
+    .back {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    .back:last-child {
+        margin-right: 0;
+
+    }
+}
+
+@media screen and (max-width: 810px) {
+    h1 {
+        font-size: 50px;
+    }
+    .author > li {
+        display: block;
+        margin: 0 10px 10px;
+    }
+
+    .author > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .tools {
+        max-width: 210px;
+        margin: auto;
+    }
+    .back {
+        display : block;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .back:last-child {
+        margin-right: 0;
+    }
+
+    .back:nth-child(even) {
+        margin-right: 0;
+    }
+
+
+}
+
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .tools-and-work-field-group {
+        margin: 50px auto 20px;
+    }
+
+    .tools {
+        margin-bottom: 20px;
+    }
+
+    #popupCanvasProp {
+        min-height: 400px;
+    }
 }
