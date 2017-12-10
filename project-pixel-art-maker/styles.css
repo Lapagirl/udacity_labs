@@ -59,6 +59,11 @@ h1 {
     background-position: center;
 }
 
+.pencil {
+    background: url("img/pencil.png") no-repeat;
+    background-position: center;
+}
+
 .eraser {
     background: url("img/eraser.png") no-repeat;
     background-position: center;
@@ -261,4 +266,9 @@ input[type=color]:focus {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 3;
     display: none;
+}
+
+.selected {
+    background-color: aquamarine;
+    border-color: #56ab80;
 }

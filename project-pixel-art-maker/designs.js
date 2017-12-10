@@ -1,4 +1,5 @@
 //show popup function
+
 function showPopup() {
     $('#popupCanvasProp').css('display', 'block');
     $('.popup-overlay').css('display', 'block');
@@ -74,18 +75,46 @@ $('#applyButton').click(function(event){
         $('#canvasHeading').text("Design canvas");
         $('#pixel_canvas').children().remove();
         makeGrid();
+        $('.control').removeClass('selected');
+        $('.pencil').addClass('selected');
+        painting();
     }
 }
 );
 
 
-//painting
-$('#pixel_canvas').click('td', function(event){
-    var color = $('#colorPicker').val();
-    var targetCell = $(event.target);
-    targetCell.css('background-color', color);
+//painting function
+function painting() {
+    $('#pixel_canvas').on('click', 'td', function(event){
+        var color = $('#colorPicker').val();
+        var targetCell = $(event.target);
+        targetCell.css('background-color', color);
+    });
 }
-);
+
+//erasing function
+function erasing() {
+    $('#pixel_canvas').on('click', 'td', function(event){
+            var color = $('#colorPicker').val();
+            var targetCell = $(event.target);
+            targetCell.css('background-color', "#fff");
+        }
+    );
+}
+
+//choose selected control
+$('.control').click(function () {
+    $('.control').removeClass('selected');
+    $(this).addClass('selected');
+
+    if($('.eraser').hasClass('selected')) {
+        erasing();
+    }
+
+    if($('.pencil').hasClass('selected')) {
+        painting();
+    }
+});
 
 
 
