@@ -29,15 +29,9 @@ function showPopup() {
     initPopup ();
     popup.addClass('popup-animation');
     popupContent.css('display', 'block');
-    popupContent.css('webkitAnimationName', 'showContent');
-    popupContent.css('webkitAnimationDuration', '1s');
-    popupContent.css('webkitAnimationDelay', '0.5s');
-    popupContent.css('webkitAnimationFillMode', 'forwards');
+    popupContent.addClass('show-content-animation');
     closePopupButton.css('display', 'block');
-    closePopupButton.css('webkitAnimationName', 'showContent');
-    closePopupButton.css('webkitAnimationDuration', '1s');
-    closePopupButton.css('webkitAnimationDelay', '0.5s');
-    closePopupButton.css('webkitAnimationFillMode', 'forwards');
+    closePopupButton.addClass('show-content-animation');
     overlay.css('display', 'block');
 }
 
@@ -53,6 +47,18 @@ function hidePopup() {
     overlay.css('display', 'none');
 }
 
+//pulse icon function
+function pulseIcon () {
+    var gridIcon = $('.grid');
+    if(!($('#pixel_canvas').parent().find('td').length > 0)) {
+        gridIcon.addClass('pulse-animation');
+        gridIcon.css('border-color', 'red');
+    } else {
+        gridIcon.removeClass('pulse-animation');
+        gridIcon.css('border-color', 'transparent');
+    }
+}
+
 //show popup after page was loaded
 $(document).ready(function() {
     showPopup();
@@ -61,7 +67,7 @@ $(document).ready(function() {
 //popup close button
 $('#closePopup').click(function () {
     hidePopup();
-
+    pulseIcon();
 });
 
 //listener on greed tool
@@ -94,6 +100,7 @@ $('#applyButton').click(function(event){
     var gridWidth = widthField.val();
     var widthHint = $('label[for="input_width"] .hint');
     var heightHint = $('label[for="input_height"] .hint');
+    var gridIcon = $('.grid');
     var isCorrect = true;
 
     event.preventDefault();
@@ -117,6 +124,8 @@ $('#applyButton').click(function(event){
         $('.control').removeClass('selected');
         $('.pencil').addClass('selected');
         painting();
+        gridIcon.removeClass('pulse-animation');
+        gridIcon.css('border-color', 'transparent');
     }
 }
 );
