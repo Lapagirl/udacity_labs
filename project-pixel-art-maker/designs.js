@@ -70,6 +70,12 @@ $('#closePopup').click(function () {
     pulseIcon();
 });
 
+//listener on popup-overlay
+$('.popup-overlay').click(function () {
+    hidePopup();
+    pulseIcon();
+});
+
 //listener on greed tool
 $('.grid').click(function () {
     showPopup();
