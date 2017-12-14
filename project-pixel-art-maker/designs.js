@@ -51,11 +51,9 @@ function hidePopup() {
 function pulseIcon () {
     var gridIcon = $('.grid');
     if(!($('#pixel_canvas').parent().find('td').length > 0)) {
-        gridIcon.addClass('pulse-animation');
-        gridIcon.css('border-color', 'red');
+        gridIcon.addClass('pulse-animation border-error');
     } else {
-        gridIcon.removeClass('pulse-animation');
-        gridIcon.css('border-color', 'transparent');
+        gridIcon.removeClass('pulse-animation border-error');
     }
 }
 
@@ -131,7 +129,8 @@ $('#applyButton').click(function(event){
         $('.pencil').addClass('selected');
         painting();
         gridIcon.removeClass('pulse-animation');
-        gridIcon.css('border-color', 'transparent');
+   /*     gridIcon.css('border-color', 'transparent');*/
+        gridIcon.addClass('border-transparent');
     }
 }
 );
