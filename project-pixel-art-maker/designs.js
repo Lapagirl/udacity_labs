@@ -169,8 +169,8 @@ $('.control').click(function () {
 });
 
 
+//change color in color picker
 $('#colorPicker').change(function () {
     $('.color-icon').css('background-color', $(this).val());
-
 });
 
