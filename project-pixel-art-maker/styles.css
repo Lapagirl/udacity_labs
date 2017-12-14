@@ -164,14 +164,10 @@ input[type=color]:hover {
     cursor: pointer;
 }
 
-/*input[type=color]:focus {
-    outline: none;
-}*/
-
 .color-icon {
     width: 80px;
     height: 80px;
-    background-color: red;
+    background-color: #000;
 }
 
 
@@ -180,7 +176,6 @@ input[type=color]:hover {
     position: fixed;
     width: 0;
     height: 0;
-    max-width: 800px;
     margin: 0 auto;
     box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.50);
     top: 50%;
@@ -196,7 +191,7 @@ input[type=color]:hover {
 }
 
 #popupCanvasProp.popup-animation {
-    width: 800px;
+    width: 700px;
     height: 600px;
 }
 
@@ -420,6 +415,10 @@ input[type=color]:hover {
     .back:last-child {
         margin-right: 0;
 
+    }
+
+    #popupCanvasProp.popup-animation {
+        width: 90%;
     }
 }
 

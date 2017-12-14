@@ -127,47 +127,27 @@ $('#applyButton').click(function(event){
         makeGrid();
         $('.control').removeClass('selected');
         $('.pencil').addClass('selected');
-        painting();
         gridIcon.removeClass('pulse-animation');
-   /*     gridIcon.css('border-color', 'transparent');*/
         gridIcon.addClass('border-transparent');
     }
 }
 );
 
-//painting function
-function painting() {
-    $('#pixel_canvas').click('td', function(event){
-        var color = $('#colorPicker').val();
-        var targetCell = $(event.target);
-        targetCell.css('background-color', color);
-    });
-}
-
-//erasing function
-function erasing() {
-    $('#pixel_canvas').click('td', function(event){
-            var color = $('#colorPicker').val();
-            var targetCell = $(event.target);
-            targetCell.css('background-color', "#fff");
-        }
-    );
-}
+$('#pixel_canvas').click('td', function(event){
+    var ctrl = $(".selected").first();
+    if (ctrl.hasClass('pencil')) {
+        $(event.target).css('background-color', $('#colorPicker').val());
+    }
+    if (ctrl.hasClass('eraser')) {
+        $(event.target).css('background-color', "#fff");
+    }
+});
 
 //choose control
 $('.control').click(function () {
     $('.control').removeClass('selected');
     $(this).addClass('selected');
-
-    if($('.eraser').hasClass('selected')) {
-        erasing();
-    }
-
-    if($('.pencil').hasClass('selected')) {
-        painting();
-    }
 });
-
 
 //change color in color picker
 $('#colorPicker').change(function () {
