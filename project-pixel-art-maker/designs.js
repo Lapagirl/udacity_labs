@@ -63,16 +63,16 @@ $(document).ready(function() {
 });
 
 //popup close button
-$('#closePopup').click(function () {
+$('#closePopup, .popup-overlay').click(function () {
     hidePopup();
     pulseIcon();
 });
 
-//listener on popup-overlay
+/*//listener on popup-overlay
 $('.popup-overlay').click(function () {
     hidePopup();
     pulseIcon();
-});
+});*/
 
 //listener on greed tool
 $('.grid').click(function () {
@@ -87,12 +87,11 @@ function makeGrid() {
 
     //create rows
     for (var i=0; i < gridHeight; i++) {
-        $(canvas).append('<tr></tr>');
-    }
-
-    //create columns
-    for (var j=0; j < gridWidth; j++) {
-        $(canvas).children().append('<td></td>');
+        var tr = document.createElement('tr');
+        for (var j=0; j < gridWidth; j++) {
+            tr.appendChild(document.createElement('td'))
+        }
+        canvas.append(tr);
     }
 }
 
