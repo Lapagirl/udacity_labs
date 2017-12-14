@@ -137,7 +137,7 @@ $('#applyButton').click(function(event){
 
 //painting function
 function painting() {
-    $('#pixel_canvas').on('click', 'td', function(event){
+    $('#pixel_canvas').click('td', function(event){
         var color = $('#colorPicker').val();
         var targetCell = $(event.target);
         targetCell.css('background-color', color);
@@ -146,7 +146,7 @@ function painting() {
 
 //erasing function
 function erasing() {
-    $('#pixel_canvas').on('click', 'td', function(event){
+    $('#pixel_canvas').click('td', function(event){
             var color = $('#colorPicker').val();
             var targetCell = $(event.target);
             targetCell.css('background-color', "#fff");
@@ -169,5 +169,8 @@ $('.control').click(function () {
 });
 
 
+$('#colorPicker').change(function () {
+    $('.color-icon').css('background-color', $(this).val());
 
+});
 

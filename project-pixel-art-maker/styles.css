@@ -150,19 +150,28 @@ td {
 }
 
 input[type=color] {
-    width: 80px;
-    height: 80px;
-    box-sizing: border-box;
-    margin: 7px auto;
-    background-color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
 }
 
 input[type=color]:hover {
     cursor: pointer;
 }
 
-input[type=color]:focus {
+/*input[type=color]:focus {
     outline: none;
+}*/
+
+.color-icon {
+    width: 80px;
+    height: 80px;
+    background-color: red;
 }
 
 
