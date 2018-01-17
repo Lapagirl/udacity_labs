@@ -1,6 +1,6 @@
-#Pixel Art Maker Project
+# Pixel Art Maker Project
 
-#Task
+## Task
 * You have to build a single-page web app that allows users to draw pixel art on a customizable canvas.
 
 * You'll be given starter code, including HTML and CSS, to build the application. 
@@ -17,7 +17,7 @@ You have to write JavaScript code that lets the user to create a grid of squares
     * Your primary task is to implement the makeGrid() function, that dynamically creates a grid that the user can interact with.
 
 
-#What was done
+## What was done
 * implemented the makeGrid() function and other auxiliary functions;
 * user set the grid size in the pop-up;
 * if the grid size more or less max and min values, user sees the error;
